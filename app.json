@@ -1,0 +1,17 @@
+{
+    "id": "com.nokia.health",
+    "sdk": 2,
+    "name": {
+        "en": "Nokia Health (Withings)"
+    },
+    "description": {
+        "en": "Adds support for Nokia Health (Withings) devices."
+    },
+    "category": "appliances",
+    "version": "1.0.0",
+    "compatibility": ">=1.5.0",
+    "author": {
+        "name": "Emile Nijssen",
+        "email": "emile@athom.nl"
+    }
+}
