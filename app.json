@@ -8,7 +8,7 @@
         "en": "Adds support for Nokia Health (Withings) devices."
     },
     "category": "appliances",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "compatibility": ">=1.5.0",
     "author": {
         "name": "Athom B.V.",
@@ -29,7 +29,24 @@
 			    "small": "/drivers/user/assets/images/small.png"
 		    },
 		    "class": "other",
-		    "capabilities": [ "nh_measure_weight", "nh_measure_fatmass" ],
+		    "capabilities": [
+		    	"nh_measure_weight",
+		    	"nh_measure_height",
+		    	"nh_measure_fat_free_mass",
+		    	"nh_measure_fat_ratio",
+		    	"nh_measure_fat_mass_weight",
+		    	"nh_measure_heart_pulse",
+		    	"nh_measure_diastolic_blood_pressure",
+		    	"nh_measure_systolic_blood_pressure",
+		    	"nh_measure_heart_pulse",
+		    	"nh_measure_spo2",
+		    	"nh_measure_body_temperature",
+		    	"nh_measure_skin_temperature",
+		    	"nh_measure_muscle_mass",
+		    	"nh_measure_hydration",
+		    	"nh_measure_bone_mass",
+		    	"nh_measure_pulse_wave_velocity"
+		    ],
 		    "mobile": {
 			    "components": [
 				    {
@@ -91,7 +108,32 @@
 				    {
 					    "type": "device",
 					    "name": "user",
-						"filter": "driver_id=user"
+						"filter": "driver_id=user&capabilities=nh_measure_weight"
+					}
+			    ]
+		    },
+		    {
+			    "id": "nh_measure_heart_pulse_changed",
+			    "title": {
+				    "en": "A heart pulse has been measured",
+				    "nl": "Een hartslag is gemeten"
+			    },
+			    "tokens": [
+				    {
+					    "name": "nh_measure_heart_pulse",
+					    "type": "number",
+					    "title": {
+						    "en": "Pulse",
+						    "nl": "Hartslag"
+					    },
+					    "example": 92
+				    }
+			    ],
+			    "args": [
+				    {
+					    "type": "device",
+					    "name": "user",
+						"filter": "driver_id=user&capabilities=nh_measure_heart_pulse"
 					}
 			    ]
 		    }
@@ -110,13 +152,169 @@
 		    "getable": true,
 		    "setable": true
 	    },
-	    "nh_measure_fatmass": {
+	    "nh_measure_height": {
+		    "type": "number",
+		    "title": {
+			    "en": "Height"
+		    },
+		    "units": {
+			    "en": "m"
+		    },
+		    "decimals": 2,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_fat_free_mass": {
+		    "type": "number",
+		    "title": {
+			    "en": "Fat Free Mass"
+		    },
+		    "units": {
+			    "en": "kg"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_fat_ratio": {
 		    "type": "number",
 		    "title": {
 			    "en": "Fat Mass"
 		    },
 		    "units": {
 			    "en": "%"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_fat_mass_weight": {
+		    "type": "number",
+		    "title": {
+			    "en": "Fat Mass Weight"
+		    },
+		    "units": {
+			    "en": "kg"
+		    },
+		    "decimals": 2,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_diastolic_blood_pressure": {
+		    "type": "number",
+		    "title": {
+			    "en": "Diastolic Blood Pressure"
+		    },
+		    "units": {
+			    "en": "mmHg"
+		    },
+		    "decimals": 2,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_systolic_blood_pressure": {
+		    "type": "number",
+		    "title": {
+			    "en": "Systolic Blood Pressure"
+		    },
+		    "units": {
+			    "en": "mmHg"
+		    },
+		    "decimals": 2,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_heart_pulse": {
+		    "type": "number",
+		    "title": {
+			    "en": "Heart Pulse"
+		    },
+		    "units": {
+			    "en": "bpm"
+		    },
+		    "decimals": 0,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_spo2": {
+		    "type": "number",
+		    "title": {
+			    "en": "SpO2"
+		    },
+		    "units": {
+			    "en": "%"
+		    },
+		    "decimals": 0,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_body_temperature": {
+		    "type": "number",
+		    "title": {
+			    "en": "Body Temperature"
+		    },
+		    "units": {
+			    "en": "°C"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_skin_temperature": {
+		    "type": "number",
+		    "title": {
+			    "en": "Skin Temperature"
+		    },
+		    "units": {
+			    "en": "°C"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_muscle_mass": {
+		    "type": "number",
+		    "title": {
+			    "en": "Muscle Mass"
+		    },
+		    "units": {
+			    "en": "kg"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_hydration": {
+		    "type": "number",
+		    "title": {
+			    "en": "Hydration"
+		    },
+		    "units": {
+			    "en": "?"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_bone_mass": {
+		    "type": "number",
+		    "title": {
+			    "en": "Bone Mass"
+		    },
+		    "units": {
+			    "en": "kg"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_pulse_wave_velocity": {
+		    "type": "number",
+		    "title": {
+			    "en": "Pulse Wave Velocity"
+		    },
+		    "units": {
+			    "en": "?"
 		    },
 		    "decimals": 1,
 		    "getable": true,
