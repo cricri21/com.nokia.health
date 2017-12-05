@@ -14,11 +14,19 @@
         "name": "Athom B.V.",
         "email": "info@athom.nl"
     },
+    "images": {
+	    "large": "/assets/images/large.png",
+	    "small": "/assets/images/small.png"
+    },
     "drivers": [
 	    {
 		    "id": "user",
 		    "name": {
 			    "en": "Nokia Health User"
+		    },
+		    "images": {
+			    "large": "/drivers/user/assets/images/large.png",
+			    "small": "/drivers/user/assets/images/small.png"
 		    },
 		    "class": "other",
 		    "capabilities": [ "nh_measure_weight", "nh_measure_fatmass" ],
