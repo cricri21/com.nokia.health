@@ -37,7 +37,12 @@
 				    },
 				    {
 					    "id": "sensor",
-					    "capabilities": [ "nh_measure_weight" ]
+					    "capabilities": [ "nh_measure_weight" ],
+					    "options": {
+						    "icons": {
+							    "nh_measure_weight": "/drivers/user/assets/icons/nh_measure_weight.svg"
+						    }
+					    }
 				    }
 			    ]
 		    },
@@ -99,7 +104,7 @@
 			    "en": "Weight"
 		    },
 		    "units": {
-			    "en": "Kg"
+			    "en": "kg"
 		    },
 		    "decimals": 2,
 		    "getable": true,

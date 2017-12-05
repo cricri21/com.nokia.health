@@ -8,16 +8,29 @@ class NokiaHealthDevice extends Homey.Device {
 	onInit() {
 		
 		let data = this.getData();
+		this._userId = data.userId;
 		
 		let store = this.getStore();
 		this._api = new NokiaHealthApi();
 		this._api.setToken( store.token );
-		this._api.createSubscription( data.userId ).catch( err => {
+		this._api.createSubscription( this._userId ).catch( err => {
 			this.error(err);
 			this.setUnavailable( err );
 		})
 		this._api.on('measurement', this._onMeasurement.bind(this));
-			
+		
+		this.sync();
+	}
+	
+	sync() {
+		this._api.getMeasurement({
+			userid: this._userId,
+			meastype: 'weight',
+			limit: 1
+		}).then( result => {
+			let measurement = NokiaHealthApi.parseMeasurementResult( result );
+			return this.setCapabilityValue('nh_measure_weight', measurement.value)
+		}).catch( this.error );
 	}
 	
 	onDeleted() {
@@ -31,8 +44,10 @@ class NokiaHealthDevice extends Homey.Device {
 		
 		let driver = this.getDriver();
 		
-		if( measurement.type === 'weight' )		
+		if( measurement.type === 'weight' )	{
+			this.setCapabilityValue('nh_measure_weight', measurement.value).catch( this.error );
 			driver.triggerFlowWeight( this, measurement.value ).catch( this.error );
+		}
 	}
 	
 }

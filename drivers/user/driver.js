@@ -40,7 +40,7 @@ class NokiaHealthDriver extends Homey.Driver {
 				.then( result => {	
 					callback( null, [
 						{
-							name: 'User', // TODO
+							name: 'Nokia Health user',
 							data: {
 								userId: result.user.id
 							},
