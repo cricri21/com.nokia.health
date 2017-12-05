@@ -42,7 +42,7 @@ class NokiaHealthDriver extends Homey.Driver {
 						{
 							name: 'Nokia Health user',
 							data: {
-								userId: result.user.id
+								userId: result.user.id.toString()
 							},
 							store: {
 								token: nokiaHealthApi.getToken()
