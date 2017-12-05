@@ -5,11 +5,6 @@ const NokiaHealthApi = require('../../lib/NokiaHealthApi');
 
 class NokiaHealthDriver extends Homey.Driver {
 	
-	onInit() {
-		this._flowTriggerWeight = new Homey.FlowCardTriggerDevice('nh_measure_weight_changed')
-            .register()
-	}
-	
 	onPair( socket ) {
 
 		let nokiaHealthApi = new NokiaHealthApi();
@@ -56,10 +51,6 @@ class NokiaHealthDriver extends Homey.Driver {
 				})
 		});
 		
-	}
-	
-	triggerFlowWeight( device, value ) {
-		return this._flowTriggerWeight.trigger( device, { weight: value } );
 	}
 	
 }

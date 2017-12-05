@@ -8,7 +8,7 @@
         "en": "Adds support for Nokia Health (Withings) devices."
     },
     "category": "appliances",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "compatibility": ">=1.5.0",
     "author": {
         "name": "Athom B.V.",
@@ -78,7 +78,7 @@
 			    },
 			    "tokens": [
 				    {
-					    "name": "weight",
+					    "name": "nh_measure_weight",
 					    "type": "number",
 					    "title": {
 						    "en": "Weight",

@@ -41,13 +41,9 @@ class NokiaHealthDevice extends Homey.Device {
 	
 	_onMeasurement( measurement ) {
 		this.log('_onMeasurement', measurement);
-		
-		let driver = this.getDriver();
-		
-		if( measurement.type === 'weight' )	{
+				
+		if( measurement.type === 'weight' )
 			this.setCapabilityValue('nh_measure_weight', measurement.value).catch( this.error );
-			driver.triggerFlowWeight( this, measurement.value ).catch( this.error );
-		}
 	}
 	
 }
