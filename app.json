@@ -11,7 +11,103 @@
     "version": "1.0.0",
     "compatibility": ">=1.5.0",
     "author": {
-        "name": "Emile Nijssen",
-        "email": "emile@athom.nl"
+        "name": "Athom B.V.",
+        "email": "info@athom.nl"
+    },
+    "drivers": [
+	    {
+		    "id": "user",
+		    "name": {
+			    "en": "Nokia Health User"
+		    },
+		    "class": "other",
+		    "capabilities": [ "nh_measure_weight", "nh_measure_fatmass" ],
+		    "mobile": {
+			    "components": [
+				    {
+					    "id": "icon"
+				    },
+				    {
+					    "id": "sensor",
+					    "capabilities": [ "nh_measure_weight" ]
+				    }
+			    ]
+		    },
+			"pair": [
+				{
+					"id": "login_oauth2",
+					"template": "login_oauth2"
+				},
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					},
+					"options": {
+						"singular": true
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
+	    }
+    ],
+    "flow": {
+	    "triggers": [
+		    {
+			    "id": "nh_measure_weight_changed",
+			    "title": {
+				    "en": "A weight has been measured",
+				    "nl": "Een gewicht is gemeten"
+			    },
+			    "tokens": [
+				    {
+					    "name": "weight",
+					    "type": "number",
+					    "title": {
+						    "en": "Weight",
+						    "nl": "Gewicht"
+					    },
+					    "example": 72.00
+				    }
+			    ],
+			    "args": [
+				    {
+					    "type": "device",
+					    "name": "user",
+						"filter": "driver_id=user"
+					}
+			    ]
+		    }
+	    ]
+    },
+    "capabilities": {
+	    "nh_measure_weight": {
+		    "type": "number",
+		    "title": {
+			    "en": "Weight"
+		    },
+		    "units": {
+			    "en": "Kg"
+		    },
+		    "decimals": 2,
+		    "getable": true,
+		    "setable": true
+	    },
+	    "nh_measure_fatmass": {
+		    "type": "number",
+		    "title": {
+			    "en": "Fat Mass"
+		    },
+		    "units": {
+			    "en": "%"
+		    },
+		    "decimals": 1,
+		    "getable": true,
+		    "setable": true
+	    }
     }
 }

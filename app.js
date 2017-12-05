@@ -9,6 +9,8 @@ class NokiaHealthApp extends Homey.App {
 	onInit() {
 		
 		this.log('NokiaHealthApp is running...');
+		
+		return;
 
 		let nokiaHealthApi = new NokiaHealthApi();
 		
