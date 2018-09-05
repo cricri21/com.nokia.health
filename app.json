@@ -4,6 +4,7 @@
     "name": {
         "en": "Nokia Health (Withings)"
     },
+    "brandColor": "#00418E",
     "description": {
         "en": "Adds support for Nokia Health (Withings) devices."
     },
