@@ -2,18 +2,18 @@
     "id": "com.nokia.health",
     "sdk": 2,
     "name": {
-        "en": "Nokia Health (Withings)"
+        "en": "Withings"
     },
-    "brandColor": "#00418E",
+    "brandColor": "#00D699",
     "description": {
-        "en": "Adds support for Nokia Health (Withings) devices."
+        "en": "Adds support for Withings devices."
     },
     "category": "appliances",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "compatibility": ">=1.5.0",
     "author": {
         "name": "Athom B.V.",
-        "email": "info@athom.nl"
+        "email": "support@athom.com"
     },
     "images": {
 	    "large": "/assets/images/large.png",
@@ -23,7 +23,7 @@
 	    {
 		    "id": "user",
 		    "name": {
-			    "en": "Nokia Health User"
+			    "en": "Withings User"
 		    },
 		    "images": {
 			    "large": "/drivers/user/assets/images/large.png",
@@ -149,6 +149,7 @@
 		    "units": {
 			    "en": "kg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 2,
 		    "getable": true,
 		    "setable": true
@@ -161,6 +162,7 @@
 		    "units": {
 			    "en": "m"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 2,
 		    "getable": true,
 		    "setable": true
@@ -173,6 +175,7 @@
 		    "units": {
 			    "en": "kg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -185,6 +188,7 @@
 		    "units": {
 			    "en": "%"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -197,6 +201,7 @@
 		    "units": {
 			    "en": "kg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 2,
 		    "getable": true,
 		    "setable": true
@@ -209,6 +214,7 @@
 		    "units": {
 			    "en": "mmHg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 2,
 		    "getable": true,
 		    "setable": true
@@ -221,6 +227,7 @@
 		    "units": {
 			    "en": "mmHg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 2,
 		    "getable": true,
 		    "setable": true
@@ -233,6 +240,7 @@
 		    "units": {
 			    "en": "bpm"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 0,
 		    "getable": true,
 		    "setable": true
@@ -245,6 +253,7 @@
 		    "units": {
 			    "en": "%"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 0,
 		    "getable": true,
 		    "setable": true
@@ -257,6 +266,7 @@
 		    "units": {
 			    "en": "°C"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -269,6 +279,7 @@
 		    "units": {
 			    "en": "°C"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -281,6 +292,7 @@
 		    "units": {
 			    "en": "kg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -293,6 +305,7 @@
 		    "units": {
 			    "en": "?"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -305,6 +318,7 @@
 		    "units": {
 			    "en": "kg"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
@@ -317,6 +331,7 @@
 		    "units": {
 			    "en": "?"
 		    },
+		    "uiComponent": "sensor",
 		    "decimals": 1,
 		    "getable": true,
 		    "setable": true
