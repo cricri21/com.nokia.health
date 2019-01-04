@@ -4,6 +4,10 @@
   "name": {
     "en": "Withings"
   },
+  "tags": {
+    "en": [ "nokia health", "nokia", "withings" ],
+    "nl": [ "nokia health", "nokia", "withings" ]
+  },
   "brandColor": "#00D699",
   "description": {
     "en": "Adds support for Withings devices."
