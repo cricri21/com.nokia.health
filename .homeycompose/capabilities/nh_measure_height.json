@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Height"
+  },
+  "units": {
+    "en": "m"
+  },
+  "uiComponent": "sensor",
+  "decimals": 2,
+  "getable": true,
+  "setable": true
+}

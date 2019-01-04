@@ -1,0 +1,14 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Weight"
+  },
+  "units": {
+    "en": "kg"
+  },
+  "uiComponent": "sensor",
+  "decimals": 2,
+  "getable": true,
+  "setable": true,
+  "icon": "/assets/icons/nh_measure_weight.svg"
+}

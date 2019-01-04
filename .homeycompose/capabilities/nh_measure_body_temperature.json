@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Body Temperature"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "getable": true,
+  "setable": true
+}

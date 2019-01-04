@@ -1,0 +1,22 @@
+{
+  "id": "com.nokia.health",
+  "sdk": 2,
+  "name": {
+    "en": "Withings"
+  },
+  "brandColor": "#00D699",
+  "description": {
+    "en": "Adds support for Withings devices."
+  },
+  "category": "appliances",
+  "version": "2.0.0",
+  "compatibility": ">=1.5.0",
+  "author": {
+    "name": "Athom B.V.",
+    "email": "support@athom.com"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  }
+}

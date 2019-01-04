@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fat Mass"
+  },
+  "units": {
+    "en": "%"
+  },
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "getable": true,
+  "setable": true
+}

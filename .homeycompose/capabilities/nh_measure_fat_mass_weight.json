@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fat Mass Weight"
+  },
+  "units": {
+    "en": "kg"
+  },
+  "uiComponent": "sensor",
+  "decimals": 2,
+  "getable": true,
+  "setable": true
+}

@@ -1,0 +1,62 @@
+{
+  "id": "user",
+  "name": {
+    "en": "Withings User"
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "class": "other",
+  "capabilities": [
+    "nh_measure_weight",
+    "nh_measure_height",
+    "nh_measure_fat_free_mass",
+    "nh_measure_fat_ratio",
+    "nh_measure_fat_mass_weight",
+    "nh_measure_heart_pulse",
+    "nh_measure_diastolic_blood_pressure",
+    "nh_measure_systolic_blood_pressure",
+    "nh_measure_heart_pulse",
+    "nh_measure_spo2",
+    "nh_measure_body_temperature",
+    "nh_measure_skin_temperature",
+    "nh_measure_muscle_mass",
+    "nh_measure_hydration",
+    "nh_measure_bone_mass",
+    "nh_measure_pulse_wave_velocity"
+  ],
+  "mobile": {
+    "components": [
+      {
+        "id": "icon"
+      },
+      {
+        "id": "sensor",
+        "capabilities": ["nh_measure_weight"],
+        "options": {
+          "icons": {
+            "nh_measure_weight": "/assets/icons/nh_measure_weight.svg"
+          }
+        }
+      }
+    ]
+  },
+  "pair": [
+    {
+      "id": "login_oauth2",
+      "template": "login_oauth2"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

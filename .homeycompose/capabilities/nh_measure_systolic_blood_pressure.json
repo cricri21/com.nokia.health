@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Systolic Blood Pressure"
+  },
+  "units": {
+    "en": "mmHg"
+  },
+  "uiComponent": "sensor",
+  "decimals": 2,
+  "getable": true,
+  "setable": true
+}

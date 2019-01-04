@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Muscle Mass"
+  },
+  "units": {
+    "en": "kg"
+  },
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "getable": true,
+  "setable": true
+}

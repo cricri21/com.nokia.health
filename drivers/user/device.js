@@ -1,21 +1,38 @@
 'use strict';
 
 const Homey = require('homey');
-const NokiaHealthApi = require('../../lib/NokiaHealthApi');
+const { OAuth2Device, OAuth2Util, OAuth2Token } = require('homey-oauth2app');
+const { parseMeasurementResult } = require('../../lib/NokiaHealthOAuth2Client');
 
-class NokiaHealthDevice extends Homey.Device {
+module.exports = class NokiaHealthDevice extends OAuth2Device {
+  
+  onOAuth2Migrate() {
+    const store = this.getStore();
+    if( store.token ) {
+      const token = new OAuth2Token(store.token);
+      const sessionId = OAuth2Util.getRandomId();
+      const configId = this.getDriver().getOAuth2ConfigId();
+      
+      return {
+        sessionId,
+        configId,
+        token,
+      }
+    }
+  }
+  
+  onOAuth2MigrateSuccess() {
+    this.unsetStoreValue('token');    
+  }
 
-	onInit() {
+	onOAuth2Init() {
+  	this.onMeasurements = this.onMeasurements.bind(this);
 
-		let data = this.getData();
-		this._userId = data.userId;
+		const { userId } = this.getData();
+		this.userId = userId;
 
-		let store = this.getStore();
-		this._api = new NokiaHealthApi();
-		this._api.on('measurements', this._onMeasurements.bind(this));
-		this._api.on('token', this._onToken.bind(this));
-		this._api.setToken( store.token );
-		this._api.createSubscription( this._userId )
+		this.oAuth2Client.on(`${userId}:measurements`, this.onMeasurements);
+		this.oAuth2Client.createSubscription({ userId })
 			.then(() => {
 				this.log('Subscribed to webhook events');
 				return this.sync();
@@ -30,44 +47,39 @@ class NokiaHealthDevice extends Homey.Device {
 	}
 
 	sync() {
-		this._api.getMeasurement({
-			userid: this._userId,
+  	const { userId } = this;
+		this.oAuth2Client.getMeasurement({
+  		userId,
 		}).then( result => {
-			let measurements = NokiaHealthApi.parseMeasurementResult( result );
+			const measurements = parseMeasurementResult( result );
 			return this._syncMeasurements(measurements);
 		}).catch( this.error );
 	}
 
-	_syncMeasurements( measurements ) {
-		let promises = [];
+	async _syncMeasurements( measurements ) {
+		const promises = [];
 		for( let type in measurements ) {
-			let value = measurements[type];
-			if( typeof value !== 'undefined' ) {
-				let capabilityId = `nh_measure_${type}`
-				if( this.hasCapability(capabilityId) ) {
-					let promise = this.setCapabilityValue(capabilityId, value)
-					promises.push( promise );
-				}
-			}
+			const value = measurements[type];
+			if( typeof value === 'undefined' ) continue;
+			
+			const capabilityId = `nh_measure_${type}`
+			if( !this.hasCapability(capabilityId) ) continue;
+			
+			const promise = this.setCapabilityValue(capabilityId, value)
+			promises.push( promise );
 		}
 		return Promise.all( promises );
 	}
 
-	onDeleted() {
-		this._api.deleteSubscription().catch( this.error )
-		this._api.removeAllListeners();
+	onOAuth2Deleted() {
+  	const { userId } = this;
+		this.oAuth2Client.deleteSubscription({ userId }).catch( this.error )
+		this.oAuth2Client.removeListener(`${userId}:measurements`, this.onMeasurements);
 	}
 
-	_onMeasurements( measurements ) {
+	onMeasurements( measurements ) {
 		this.log('_onMeasurements', measurements);
 		this._syncMeasurements( measurements ).catch( this.error );
 	}
 
-	_onToken( token ) {
-		this.log('Refreshed OAuth2 token');
-		this.setStoreValue('token', token).catch( this.error );
-	}
-
 }
-
-module.exports = NokiaHealthDevice;

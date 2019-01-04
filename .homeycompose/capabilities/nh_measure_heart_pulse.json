@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Heart Pulse"
+  },
+  "units": {
+    "en": "bpm"
+  },
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "getable": true,
+  "setable": true
+}

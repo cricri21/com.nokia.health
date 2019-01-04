@@ -1,0 +1,38 @@
+{
+  "triggers": [
+    {
+      "id": "nh_measure_weight_changed",
+      "title": {
+        "en": "A weight has been measured",
+        "nl": "Een gewicht is gemeten"
+      },
+      "tokens": [{
+        "name": "nh_measure_weight",
+        "type": "number",
+        "title": {
+          "en": "Weight",
+          "nl": "Gewicht"
+        },
+        "example": 72.00
+      }],
+      "$filter": "capabilities=nh_measure_weight"
+    },
+    {
+      "id": "nh_measure_heart_pulse_changed",
+      "title": {
+        "en": "A heart pulse has been measured",
+        "nl": "Een hartslag is gemeten"
+      },
+      "tokens": [{
+        "name": "nh_measure_heart_pulse",
+        "type": "number",
+        "title": {
+          "en": "Pulse",
+          "nl": "Hartslag"
+        },
+        "example": 92
+      }],
+      "$filter": "capabilities=nh_measure_heart_pulse"
+    }
+  ]
+}
