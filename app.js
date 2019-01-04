@@ -12,8 +12,6 @@ const SCOPES = [
 module.exports = class NokiaHealthApp extends OAuth2App {
   
   onOAuth2Init() {
-    
-    this.enableOAuth2Debug();
     this.setOAuth2Config({
       client: NokiaHealthOAuth2Client,
       apiUrl: 'https://api.health.nokia.com',

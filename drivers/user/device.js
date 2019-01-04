@@ -39,6 +39,7 @@ module.exports = class NokiaHealthDevice extends OAuth2Device {
 			})
 			.then(() => {
 				this.log('Successfully got latest measurement');
+				this.setAvailable();
 			})
 			.catch( err => {
 				this.error(err);
