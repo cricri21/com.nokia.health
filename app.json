@@ -21,7 +21,7 @@
     "en": "Adds support for Withings devices."
   },
   "category": "appliances",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": ">=1.5.0",
   "author": {
     "name": "Athom B.V.",
