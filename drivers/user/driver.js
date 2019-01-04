@@ -9,7 +9,6 @@ module.exports = class NokiaHealthDriver extends OAuth2Driver {
     const { user } = await oAuth2Client.getUserInfo();
     return [
       {
-        name: 'Nokia Health User',
         data: {
           userId: String(user.id),
         }
