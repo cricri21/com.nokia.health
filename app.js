@@ -14,9 +14,9 @@ module.exports = class NokiaHealthApp extends OAuth2App {
   onOAuth2Init() {
     this.setOAuth2Config({
       client: NokiaHealthOAuth2Client,
-      apiUrl: 'https://api.health.nokia.com',
-      tokenUrl: 'https://account.health.nokia.com/oauth2/token',
-      authorizationUrl: 'https://account.health.nokia.com/oauth2_user/authorize2',
+      apiUrl: 'https://wbsapi.withings.net/v2/',
+      tokenUrl: 'https://account.withings.com/oauth2/token',
+      authorizationUrl: 'https://account.withings.com/oauth2_user/authorize2',
       scopes: SCOPES,
     });    
   }
