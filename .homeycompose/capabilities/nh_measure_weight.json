@@ -10,5 +10,6 @@
   "decimals": 2,
   "getable": true,
   "setable": true,
+  "insights": true,
   "icon": "/assets/icons/nh_measure_weight.svg"
 }

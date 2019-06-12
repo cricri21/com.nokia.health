@@ -9,5 +9,6 @@
   "uiComponent": "sensor",
   "decimals": 2,
   "getable": true,
-  "setable": true
+  "setable": true,
+  "insights": true
 }

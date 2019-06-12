@@ -21,7 +21,7 @@
     "en": "Adds support for Withings devices."
   },
   "category": "appliances",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "compatibility": ">=1.5.0",
   "author": {
     "name": "Athom B.V.",
@@ -163,7 +163,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_bone_mass": {
       "type": "number",
@@ -176,7 +177,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_diastolic_blood_pressure": {
       "type": "number",
@@ -189,7 +191,8 @@
       "uiComponent": "sensor",
       "decimals": 2,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_fat_free_mass": {
       "type": "number",
@@ -202,7 +205,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_fat_mass_weight": {
       "type": "number",
@@ -215,7 +219,8 @@
       "uiComponent": "sensor",
       "decimals": 2,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_fat_ratio": {
       "type": "number",
@@ -228,7 +233,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_heart_pulse": {
       "type": "number",
@@ -241,7 +247,8 @@
       "uiComponent": "sensor",
       "decimals": 0,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_height": {
       "type": "number",
@@ -254,7 +261,8 @@
       "uiComponent": "sensor",
       "decimals": 2,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_hydration": {
       "type": "number",
@@ -267,7 +275,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_muscle_mass": {
       "type": "number",
@@ -280,7 +289,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_pulse_wave_velocity": {
       "type": "number",
@@ -293,7 +303,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_skin_temperature": {
       "type": "number",
@@ -306,7 +317,8 @@
       "uiComponent": "sensor",
       "decimals": 1,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_spo2": {
       "type": "number",
@@ -319,7 +331,8 @@
       "uiComponent": "sensor",
       "decimals": 0,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_systolic_blood_pressure": {
       "type": "number",
@@ -332,7 +345,8 @@
       "uiComponent": "sensor",
       "decimals": 2,
       "getable": true,
-      "setable": true
+      "setable": true,
+      "insights": true
     },
     "nh_measure_weight": {
       "type": "number",
@@ -346,6 +360,7 @@
       "decimals": 2,
       "getable": true,
       "setable": true,
+      "insights": true,
       "icon": "/assets/icons/nh_measure_weight.svg"
     }
   }
